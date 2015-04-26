@@ -38,4 +38,4 @@ bigData_sd<-sapply(bigData,sd,na.rm=TRUE)
 # 5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 DT <- data.table(bigData)
 tidy<-DT[,lapply(.SD,mean),by="Activity,Subject"]
-write.table(tidy,file="tidydata.csv",sep=",",row.names = FALSE)
+write.table(tidy, file="tidyData.txt", row.name=FALSE, sep = "\t")
